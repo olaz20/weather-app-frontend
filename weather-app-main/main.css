@@ -18,11 +18,15 @@ body {
     align-items: center;
  
 }
+
+.app-logo{
+    height: 30px;
+}
 .dropdown{
     position: relative;
     display: inline-block;
 }
-.units {
+.dropdown button{
     background: #1e2540;
     border: none;
     border-radius: 8px;
@@ -31,12 +35,16 @@ body {
     align-items: center;
     gap: 10px;
     padding: 5px 10px;
-    font-size: 16px;
+    font-size: 8px;
     cursor: pointer;
     font-size: 0.9rem;
+    height: 40px;
 }
+
+
 .units .dropdown-arrow{
     margin-left: auto;
+
 }
 
 .dropdown-title{
@@ -116,9 +124,9 @@ body {
 .title{
     text-align: center;
     font-family: 'Bricolage Grotesque', sans-serif;
-    font-weight: 500;
+    font-weight: 400;
     font-size: 1.2rem;
-    margin: 60px 0;
+    margin: 30px 0;
 }
 
 .search-container{
@@ -238,9 +246,13 @@ body {
 .card-sub-title{
     display: flex;
     justify-content: space-between;
-    
+    align-items: center;
 }
 
+.card-sub-title h3{
+    font-size: 1rem;
+    margin: 0;
+}
 .day-dropdow{
     position: relative;
     display: inline-block;
@@ -256,6 +268,7 @@ body {
     align-items: center;
     gap: 10px;
     padding: 5px 10px;
+    height: 40px;
 }
 
 .dropdown-menu{
@@ -294,12 +307,13 @@ body {
 .forecast-card{
     background: #1e2540;
     box-shadow: 0px 6px 15px rgba(0,0,0,0.5);
-    z-index: 100;
     padding: 12px;
     text-align: center;
     display: flex;
     justify-content: space-between;
     border-radius: 12px;
+    height: 20px;
+    align-items: center;
 }
 
 .forecast-day{
