@@ -1,0 +1,219 @@
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap');
+
+body {
+    margin: 0;
+    background: #0a0f1f;
+    color: white;
+}
+
+.container{
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-top: 2%;
+}
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+ 
+}
+.dropdown{
+    position: relative;
+    display: inline-block;
+}
+.units {
+    background: #1e2540;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 5px 10px;
+    font-size: 16px;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+.units .dropdown-arrow{
+    margin-left: auto;
+}
+
+.dropdown-title{
+    border-radius: 4px;
+    padding: 6px 10px;
+    background: #2a3144;
+    font-size: 0.85rem;
+}
+
+.dropdown-content{
+    display: none;
+    position: absolute;
+    top: 110%;
+    right: 0;
+    min-width: 180px;
+    background:#1e2540;
+    border-radius: 12px;
+    padding: 12px;
+    box-shadow: 0px 6px 15px rgba(0,0,0,0.5);
+    z-index: 100;
+}
+
+.dropdown-content .title{
+    font-size: 0.85rem;
+    color: #ccc;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #333;
+    padding-bottom: 5px;
+}
+
+.dropdown-content .group {
+    margin-bottom: 15px;
+}
+
+.dropdown-content .group p{
+    font-size: 0.8rem;
+    color: #aaa;
+    margin: 8px 0;
+}
+.dropdown-content ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.dropdown-content li {
+    padding: 6px 10px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.3s;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.dropdown-content li:hover {
+    background: #2a3144;
+}
+
+.dropdown-content li.active {
+    font-weight: bold;
+    background: #2a3144;
+    font-size: 0.9rem;
+} 
+
+.dropdown.open .dropdown-content{
+  display: block;
+}
+
+
+.dropdown-content li img{
+    width: 12px;
+    height: 12px;
+}
+
+
+.title{
+    text-align: center;
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-weight: 500;
+    font-size: 1.2rem;
+    margin: 60px 0;
+}
+
+.search-container{
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 40px;
+}
+
+
+.search-container .Search-bar{
+    width: 300px;
+    padding: 10px 15px;
+    border-radius: 8px;
+    border: none;
+    font-size: 1rem;
+    background: #1e2540;
+    color: white;
+}
+
+.search-container .search-wrapper{
+    position: relative;
+}
+
+
+.search-wrapper img{
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 16px;
+    height: 16px;
+     pointer-events: none;
+    opacity: 0.6;
+}
+
+.search-container .submit-bar{
+    background: hsl(233, 67%, 56%);
+    border: none;
+    border-radius: 8px;
+    color: white;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.weather-card {
+  width: 620px;        /* card width */
+  height: 180px;  
+  display: flex;     /* card height */
+  position: relative;
+  background: url("assets/images/bg-today-large.svg") no-repeat center/cover;
+  border-radius: 12px;
+  padding: 20px;
+  justify-content: space-between;
+  color: white;
+  align-items: center;
+}
+
+
+.weather-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+   width: 100%;
+}
+
+.weather-info h2 {
+  margin: 0;
+  font-weight: bold;
+  font-size: 25px;
+}
+
+.weather-info p {
+  margin: 4px 0 0;
+  font-size: 18px;
+
+}
+
+.weather-temp {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.weather-temp h1 {
+  font-size: 80px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.weather-icon {
+  width: 100px;
+  height: 100px;
+}
+

@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Weather APP </title>
+   <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="header">
+                <img src="assets/images/logo.svg" alt="logo">
+                <div class="dropdown">
+                    <button class="units">
+                    <img src="assets/images/icon-units.svg" alt="units">
+                    <p>units</p>
+                    <img src="assets/images/icon-dropdown.svg" alt="icon-dropdown" class="dropdown-arrow">
+                        </button>
+                    <div class="dropdown-content">
+                        <p class="dropdown-title">Switch to Imperial </p>
+                        <div class="group"> 
+                            <p>Temperature</p>
+                            <ul>
+                                <li class="active"> <span> Celsius (°C)</span>  <img src="
+                                    assets\images\icon-checkmark.svg" alt="active"></li>
+                                <li> <span> Fahrenheit </span> </li>
+                            </ul>
+                        </div>
+                        <div class="group"> 
+                            <p>Wind speed</p>
+                            <ul>
+                                <li class="active"> <span>km/h</span>  <img src="
+                                    assets\images\icon-checkmark.svg" alt="active"></li>
+                                <li><span> mph </span></li>
+                            </ul>
+                        </div>
+                        <div class="group">
+                            <p>Precipitation</p>
+                            <ul>
+                                <li class="active"> <span> Millimeters (m)</span>  <img src="
+                                    assets\images\icon-checkmark.svg" alt="active"></li>
+                                <li> <span>Inches (in)</span> </li>
+                            </ul>
+                        </div>
+                </div>
+            </div>
+        </header>
+        <div class="title">
+            <h1> How's the sky looking today?</h1>
+        </div>
+        <div class="search-container">
+            <div class="search-wrapper">
+               <input class="Search-bar" type="text" placeholder="Search for a city, e.g., New York" >
+               <img src="assets/images/icon-search.svg" alt="search">
+            </div>
+            <button class="submit-bar" type="submit">Search</button>
+        </div>
+
+        <div class="design-container">
+             <div class="weather-card">
+                <div class="weather-content">
+                    <div class="weather-info">
+                        <h2>Berlin, Germany</h2>
+                        <p>Tuesday, Aug 6, 2025</p>
+                    </div>
+                    <div class="weather-temp">
+                      <img src="assets/images/icon-sunny.webp" alt="Sunny" class="weather-icon">
+                      <h1>20°</h1>
+                    </div>
+                </div>
+            </div>
+            <div class="right-design">
+                <div class="card-sub-title" >
+                    <h4>Hourly Forecast</h4>
+                    <div class="day-dropdow">
+                        <button id="dayButton" > <p>Tuesday </p> <img src="assets/images/icon-units.svg">
+                        <ul id="dayMenu" class="dropdown-menu">
+                            <li data-day="Monday">Monday</li>
+                            <li data-day="Tuesday">Tuesday</li>
+                            <li data-day="Wednesday">Wednesday</li>
+                            <li data-day="Thursday">Thursday</li>
+                            <li data-day="Friday">Friday</li>
+                            <li data-day="Saturday">Saturday</li>
+                            <li data-day="Sunday">Sunday</li>
+                        </ul>
+                        </button>
+                    </div>
+                </div>
+                <div class="forecast-container">
+                    <div class="forecast-card">
+                        <div class="forecast-day">
+                            <p>Wed 7</p>
+                           <img src="assets/images/icon-sunny.webp" alt="weather-logo">
+                        </div>
+                        <div class="forecast-temp">
+                            <p>18° 12°</p>
+                        </div>
+                    </div>
+                    <div class="forecast-card">
+                        <div class="forecast-day">
+                            <p>Wed 7</p>
+                           <img src="assets/images/icon-sunny.webp" alt="weather-logo">
+                        </div>
+                        <div class="forecast-temp">
+                            <p>18° 12°</p>
+                        </div>
+                    </div>
+                    <div class="forecast-card">
+                        <div class="forecast-day">
+                            <p>Wed 7</p>
+                           <img src="assets/images/icon-sunny.webp" alt="weather-logo">
+                        </div>
+                        <div class="forecast-temp">
+                            <p>18° 12°</p>
+                        </div>
+                    </div>
+                    <div class="forecast-card">
+                        <div class="forecast-day">
+                            <p>Wed 7</p>
+                           <img src="assets/images/icon-sunny.webp" alt="weather-logo">
+                        </div>
+                        <div class="forecast-temp">
+                            <p>18° 12°</p>
+                        </div>
+                    </div>
+                    <div class="forecast-card">
+                        <div class="forecast-day">
+                            <p>Wed 7</p>
+                           <img src="assets/images/icon-sunny.webp" alt="weather-logo">
+                        </div>
+                        <div class="forecast-temp">
+                            <p>18° 12°</p>
+                        </div>
+                    </div>
+                    <div class="forecast-card">
+                        <div class="forecast-day">
+                            <p>Wed 7</p>
+                           <img src="assets/images/icon-sunny.webp" alt="weather-logo">
+                        </div>
+                        <div class="forecast-temp">
+                            <p>18° 12°</p>
+                        </div>
+                    </div>
+                    <div class="forecast-card">
+                        <div class="forecast-day">
+                            <p>Wed 7</p>
+                           <img src="assets/images/icon-sunny.webp" alt="weather-logo">
+                        </div>
+                        <div class="forecast-temp">
+                            <p>18° 12°</p>
+                        </div>
+                    </div>
+                    <div class="forecast-card">
+                        <div class="forecast-day">
+                            <p>Wed 7</p>
+                           <img src="assets/images/icon-sunny.webp" alt="weather-logo">
+                        </div>
+                        <div class="forecast-temp">
+                            <p>18° 12°</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        
+
+
+        
+        <div>
+            <div>
+                <p>feels like</p>
+                <p>18</p>
+            </div>
+            <div>
+                <p>Humidity</p>
+                <p>46%</p>
+            </div>
+            <div>
+                <p>wind</p>
+                <p>14km/h</p>
+            </div>
+            <div>
+                <p>precipitation</p>
+                <p>0mm</p>
+            </div>
+        </div>
+          <h3>
+            Daily Forecast
+          </h3>
+          <div>
+            <div>
+                <p>Wed 7</p>
+                <img src="assets/images/icon-sunny.webp" alt="weather-logo">
+                <p>18° 12°</p>
+            </div>
+            <div>
+                <p>Thu 8</p>
+                <img src="assets/images/icon-sunny.webp" alt="weather-logo">
+                <p>20° 14°</p>
+            </div>
+            <div>
+                <p>Fri 9</p>
+                <img src="assets/images/icon-sunny.webp" alt="weather-logo">
+                <p>22° 16°</p>
+            </div>
+            <div>
+                <p>Sat 10</p>
+                <img src="assets/images/icon-sunny.webp" alt="weather-logo">
+                <p>24° 18°</p>
+            </div>
+            <div>
+                <p>Sun 11</p>
+                <img src="assets/images/icon-sunny.webp" alt="weather-logo">
+                <p>26° 20°</p>
+            </div>
+            <div>
+                <p>Mon 12</p>
+                <img src="assets/images/icon-sunny.webp" alt="weather-logo">
+                <p>28° 22°</p>
+            </div>
+            <div>
+                <p>Tue 13</p>
+                <img src="assets/images/icon-sunny.webp" alt="weather-logo">
+                <p>30° 24°</p>
+            </div>
+          </div>
+      </div>
+        <div>
+            <div>
+                <h3>Hourly Forecast</h3>
+                
+            </div>
+            
+            
+
+    </div>
+     
+    <script src="main.js"></script>
+</body>
+
+</html>
+
