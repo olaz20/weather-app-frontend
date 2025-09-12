@@ -299,7 +299,7 @@ body {
 
 .forecast-container{
    display: grid;
-   gap: 12px;
+   gap: 6px;
    margin-top: 20px;
    margin-top: 20px;
 } 
@@ -312,7 +312,7 @@ body {
     display: flex;
     justify-content: space-between;
     border-radius: 12px;
-    height: 20px;
+    height: 30px;
     align-items: center;
 }
 
