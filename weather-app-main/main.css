@@ -312,7 +312,7 @@ body {
     display: flex;
     justify-content: space-between;
     border-radius: 12px;
-    height: 30px;
+    height: 27px;
     align-items: center;
 }
 
@@ -364,9 +364,9 @@ body {
 }
 
 .subtitle{
-    margin-top: 30px;
+    margin-top: 40px;
     font-size: 1.2rem;
-    margin-bottom: 5px;
+    margin-bottom: 10px;
 }
 .daily-forecast-container{
     display: flex;
