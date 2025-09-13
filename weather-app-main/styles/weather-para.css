@@ -2,6 +2,8 @@
     display: flex;
     justify-content: space-between;
     margin-top: 20px;
+    box-sizing: border-box;
+
 }
 
 
@@ -13,6 +15,7 @@
     flex: 1;
     margin: 0 6px;
     border-radius: 12px;
+    
 }
 
 .weater-params p{
@@ -27,10 +30,19 @@
     margin-top: 10px;
 }
 
-@media (max-width: 600px){
+@media (max-width: 800px){
 .weater-params-container{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+}
+}
+
+
+@media(min-width: 801px) and (max-width: 1000px){
+    .weater-params-container{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
     gap: 10px;
 }
 }

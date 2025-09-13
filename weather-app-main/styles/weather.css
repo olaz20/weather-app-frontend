@@ -1,4 +1,6 @@
-
+.left-design{
+    flex: 1;
+}
 
 
 
@@ -13,6 +15,7 @@
   justify-content: space-between;
   color: white;
   align-items: center;
+
 }
 
 
@@ -62,12 +65,25 @@
 
 .weather-card{
     background: url("/weather-app-main/assets/images/bg-today-small.svg") no-repeat center/cover;
-    
+    width: 100% !important;
+    padding: 20px 0px;
 }
 
 .weather-content{
     flex-direction: column;
+    box-sizing: border-box;
 }
 
+}
 
+@media(min-width: 601px) and (max-width: 1000px){
+.left-design{
+    width: 50% !important;
+    box-sizing: border-box;
+}
+.weather-card{
+    width: 100% !important;
+    box-sizing: border-box;
+    flex: 1;
+}
 }

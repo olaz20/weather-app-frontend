@@ -38,10 +38,16 @@
 }
 
 
-@media (max-width: 600px){
+@media (max-width: 800px){
 .daily-forecast-container{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
 }
 }
 
+@media(min-width: 801px) and (max-width: 1000px){
+  .daily-forecast-container{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);  
+}
+}
