@@ -1,0 +1,73 @@
+
+
+
+
+.weather-card {
+  width: 620px;        
+  height: 180px;  
+  display: flex;    
+  position: relative;
+  background: url("/weather-app-main/assets/images/bg-today-large.svg") no-repeat center/cover;
+  border-radius: 12px;
+  padding: 20px;
+  justify-content: space-between;
+  color: white;
+  align-items: center;
+}
+
+
+.weather-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+   width: 100%;
+}
+
+.weather-info h2 {
+  margin: 0;
+  font-weight: bold;
+  font-size: 25px;
+}
+
+.weather-info p {
+  margin: 4px 0 0;
+  font-size: 18px;
+
+}
+
+.weather-temp {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.weather-temp h1 {
+  font-size: 80px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.weather-icon {
+  width: 100px;
+  height: 100px;
+}
+
+
+@media (max-width: 600px){
+.left-design{
+    width: 100% !important;
+    box-sizing: border-box;
+}
+
+.weather-card{
+    background: url("/weather-app-main/assets/images/bg-today-small.svg") no-repeat center/cover;
+    
+}
+
+.weather-content{
+    flex-direction: column;
+}
+
+
+}
