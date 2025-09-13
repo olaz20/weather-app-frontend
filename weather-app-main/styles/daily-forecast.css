@@ -51,3 +51,10 @@
     grid-template-columns: repeat(4, 1fr);  
 }
 }
+
+@media(min-width: 1001px) and (max-width: 1400px){
+     .daily-forecast-container{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);  
+}
+}

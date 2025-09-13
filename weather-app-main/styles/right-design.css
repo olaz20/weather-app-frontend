@@ -115,3 +115,9 @@
     box-sizing: border-box;
 }
 }
+@media(min-width: 1001px){
+   .right-design{
+    width: 35% !important;
+    box-sizing: border-box;
+}
+}

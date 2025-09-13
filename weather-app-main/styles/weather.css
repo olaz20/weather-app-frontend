@@ -1,12 +1,11 @@
-.left-design{
+/**.left-design{
     flex: 1;
-}
+} **/
 
 
 
-.weather-card {
-  width: 620px;        
-  height: 180px;  
+.weather-card {       
+  height: auto;  
   display: flex;    
   position: relative;
   background: url("/weather-app-main/assets/images/bg-today-large.svg") no-repeat center/cover;
@@ -25,35 +24,37 @@
   align-items: center;
   height: 100%;
    width: 100%;
+   flex: 1;
 }
 
 .weather-info h2 {
   margin: 0;
   font-weight: bold;
-  font-size: 25px;
+  font-size: clamp(20px, 1.5vw, 25px);
+
 }
 
 .weather-info p {
   margin: 4px 0 0;
-  font-size: 18px;
+  font-size: 18px
 
 }
 
 .weather-temp {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: clamp(5px, 0.5vw, 10px);
 }
 
 .weather-temp h1 {
-  font-size: 80px;
+  font-size: clamp(40px, 4vw, 80px);
   font-weight: bold;
   margin: 0;
 }
 
 .weather-icon {
-  width: 100px;
-  height: 100px;
+  width: clamp(50px, 10vw, 100px);
+  height: auto;
 }
 
 
@@ -67,14 +68,19 @@
     background: url("/weather-app-main/assets/images/bg-today-small.svg") no-repeat center/cover;
     width: 100% !important;
     padding: 20px 0px;
+    
+    
 }
+
 
 .weather-content{
     flex-direction: column;
     box-sizing: border-box;
+    gap: 20px;
 }
 
 }
+
 
 @media(min-width: 601px) and (max-width: 1000px){
 .left-design{
@@ -85,5 +91,18 @@
     width: 100% !important;
     box-sizing: border-box;
     flex: 1;
+}
+ .weather-info h2{
+        font-size: clamp(9px, 1.5vw, 18px)
+    }
+    .weather-info p {
+         font-size: clamp(8px, 1.5vw, 15px);
+    }
+}
+
+@media(min-width: 1001px) {
+   .left-design{
+    width: 65% !important;
+    box-sizing: border-box;
 }
 }
