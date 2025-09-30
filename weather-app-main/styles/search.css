@@ -3,21 +3,28 @@
     justify-content: center;
     gap: 10px;
     margin-bottom: 40px;
+    position: relative;
 }
 
 
-.search-container .Search-bar{
-    width: clamp(150px, 30vw, 300px);
-    padding: 10px 15px;
-    border-radius: 8px;
-    border: none;
-    font-size: 1rem;
-    background: #1e2540;
-    color: white;
-}
 
 .search-container .search-wrapper{
     position: relative;
+     
+  
+}
+
+
+
+.search-container .search-bar{
+    width: clamp(150px, 30vw, 300px);
+    padding: 10px 25px;
+    background:  #1e2540 url("../assets/images/icon-search.svg") no-repeat 10px center;
+    background-size: 18px 18px;
+    border-radius: 8px;
+    border: none;
+    font-size: 1rem;
+    color: white;
 }
 
 
@@ -33,6 +40,7 @@
 }
 
 .search-container .submit-bar{
+    position: relative;
     background: hsl(233, 67%, 56%);
     border: none;
     border-radius: 8px;
@@ -43,13 +51,35 @@
     transition: background 0.3s;
 }
 
+.suggestions-list {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: #1e2540;
+    border-radius: 8px;
+    margin: 0;
+    z-index: 1000;
+    padding: 5px 0;
+    list-style: none;
+    display: none;
+}
+.suggestions-list li {
+  padding: 10px;
+  cursor: pointer;
+  color: #fff;
+}
+.suggestions-list li:hover {
+  background: #333;
+}
+
 @media (max-width: 600px){
      
 .search-container{ 
     flex-direction: column;
     align-items: stretch;
 }
-.Search-bar {
+.search-bar {
     width: 100% !important;
     padding: 10px 0px 10px 30px !important ;
     box-sizing: border-box;

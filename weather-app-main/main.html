@@ -58,11 +58,12 @@
         </div>
       <div class="search-container">
             <div class="search-wrapper">
-                <img src="assets/images/icon-search.svg" alt="search"> 
-               <input class="Search-bar" type="text" placeholder="  Search for a city, e.g., New York" >
-                
+               <input class="search-bar" type="text" placeholder="  Search for a city, e.g., New York" 
+                oninput="showsuggestions(this.value)">
+                <ul class="suggestions-list" id="suggestions"></ul>
             </div>
             <button class="submit-bar" type="submit">Search</button>
+            
         </div>
 
          <div class="design-container">
@@ -252,6 +253,7 @@
     </div>
      
     <script src="main.js"></script>
+    <script src="search.js"></script>
 </body>
 
 </html>
