@@ -58,8 +58,8 @@
         </div>
       <div class="search-container">
             <div class="search-wrapper">
-               <input class="search-bar" type="text" placeholder="  Search for a city, e.g., New York" 
-                oninput="showsuggestions(this.value)">
+               <input id="searchInput" class="search-bar" type="text" placeholder="  Search for a city, e.g., New York" 
+               >
                 <ul class="suggestions-list" id="suggestions"></ul>
             </div>
             <button class="submit-bar" type="submit">Search</button>
@@ -71,37 +71,37 @@
                  <div class="weather-card">
                 <div class="weather-content">
                     <div class="weather-info">
-                        <h2>Berlin, Germany</h2>
-                        <p>Tuesday, Aug 6, 2025</p>
+                        <h2 id="city-name">Berlin, Germany</h2>
+                        <p id="current-date">Tuesday, Aug 6, 2025</p>
                     </div>
                     <div class="weather-temp">
-                      <img src="assets/images/icon-sunny.webp" alt="Sunny" class="weather-icon">
-                      <h1>20°</h1>
+                      <img id="weather-icon" src="assets/images/icon-sunny.webp" alt="Sunny" class="weather-icon">
+                      <h1 id="temperature">20°</h1>
                     </div>
                 </div>
                  </div>
             <div class="weater-params-container">
                     <div class="weater-params">
                         <p>feels like</p>
-                        <p class="value">18</p>
+                        <p class="value" id="feels-like">18</p>
                     </div>
                     <div class="weater-params">
                         <p>Humidity</p>
-                        <p class="value">46%</p>
+                        <p class="value" id="humidity">46%</p>
                     </div>
                     <div class="weater-params">
                         <p>wind</p>
-                        <p class="value">14km/h</p>
+                        <p class="value" id="wind">14km/h</p>
                     </div>
                     <div class="weater-params">
                         <p>precipitation</p>
-                        <p class="value">0mm</p>
+                        <p class="value" id="precipitation">0mm</p>
                     </div>
                 </div>
-                     <h3 class="subtitle">
+                <h3 class="subtitle">
                    Daily Forecast
                 </h3>
-                <div class="daily-forecast-container">
+                <div id="daily-forecast" class="daily-forecast-container">
                     <div class="daily-forecast-card">
                         <p>Wed 7</p>
                         <img src="assets/images/icon-sunny.webp" alt="weather-logo">
@@ -252,8 +252,9 @@
 
     </div>
      
-    <script src="main.js"></script>
-    <script src="search.js"></script>
+    <script src="main.js" type="module"></script>
+    <script src="search.js" type="module"></script>
+    <script src="left-design.js" type="module"></script>
 </body>
 
 </html>
