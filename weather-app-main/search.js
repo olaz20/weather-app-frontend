@@ -1,5 +1,5 @@
 import { renderCurrentWeather , renderDailyForecast} from './left-design.js'
-
+import {renderHourlyForecast} from './right-design.js'
 const suggestionsEl = document.getElementById("suggestions");
 const searchButton = document.querySelector(".submit-bar");
 const searchInput = document.getElementById("searchInput");
@@ -49,8 +49,11 @@ async function fetchWeatherData(lat, lon, label){
         throw new Error("Weather API request failed");
     }
     const data = await res.json();
+    window.weatherData = data;
     renderCurrentWeather(data, label);
     renderDailyForecast(data);
+    const today = new Date().toLocaleDateString("en-US", { weekday: "long" });
+    renderHourlyForecast(today, data);
      suggestionsEl.style.display = "none";
     } catch (error) {
         console.error("Error fetching weather data:", error);
