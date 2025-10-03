@@ -7,43 +7,53 @@
 
 .app-logo{
     height: 30px;
-    width: clamp(80px, 15vw, 180px); /* responsive logo */
+    width: clamp(80px, 15vw, 180px); 
     flex-shrink: 1;
 }
 .dropdown{
     position: relative;
     display: inline-block;
 }
-.dropdown button{
+
+
+ .units{
     background: #1e2540;
     border: none;
     border-radius: 8px;
     color: white;
     display: flex;
     align-items: center;
-    gap: clamp(5px, 1.2vw , 10px);
-    padding: 5px 10px;
-    font-size: 8px;
+    justify-content: space-between;
+    gap: clamp(5px, 0.9vw , 7px);
     cursor: pointer;
     font-size: 0.9rem;
     height: 40px;
-    width: clamp(60px, 10vw, 95px);
-    flex-shrink: 1;
+    width: clamp(60px, 10vw, 80px);
     box-sizing: border-box;
+    flex-shrink: 1;
+   
 }
 .dropdown button .settings{
-   width: clamp(8px, 1.5vw, 16px);
+   width: clamp(8px, 1.5vw, 12px);
+    height: auto;
+    object-fit: contain;
+    flex-shrink: 0;
 }
 .dropdown button p {
-  font-size: clamp(0.6rem, 1.5vw, 0.9rem); /* responsive font size */
+  font-size: clamp(0.6rem, 1.2vw, 0.9rem); 
   white-space: nowrap; 
+  margin: 0;
+  flex: 0; 
+  text-align: center;
 }
 
 .units .dropdown-arrow{
-    margin-left: auto;
-    width: clamp(5px, 1.5vw, 15px);  
+    margin-left: 0;
+    width: clamp(5px, 1.5vw, 12px);  
     height: auto;                   
     flex-shrink: 0;   
+    object-fit: contain;
+  
 }
 
 
@@ -66,8 +76,13 @@
     padding: 6px 10px;
     background: #2a3144;
     font-size: 0.85rem;
+    user-select: none; 
+    cursor: pointer;  
+    transition: background 0.2s ease;
 }
-
+.dropdown-title:hover {
+  background: #3a4258;    
+}
 .dropdown-content .title{
     font-size: 0.85rem;
     color: #ccc;
@@ -103,7 +118,7 @@
 }
 
 .dropdown-content li:hover {
-    background: #2a3144;
+     background: #3a4258;
 }
 
 .dropdown-content li.active {

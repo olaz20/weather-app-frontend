@@ -3,7 +3,7 @@ const dayButton = document.getElementById("dayButton");
 const dayMenu = document.getElementById("dayMenu");
 const dayLabel = document.querySelector(".day-label");
 const forecastContainer = document.querySelector(".forecast-container");
-
+import {formatTemp}  from  "./helper_function.js"
 
 dayButton.addEventListener("click", () => {
     dayMenu.style.display = dayMenu.style.display === "block" ? "none" : "block";
@@ -42,7 +42,7 @@ export function renderHourlyForecast(selectedDay, data){
         <img src="${weatherIcons[weathercode[i]] || "assets/images/icon-sunny.webp"}" alt="weather-icon">
         </div>
          <div class="forecast-temp">
-          <p>${Math.round(temperature_2m[i])}°</p>
+          <p>${formatTemp(temperature_2m[i])}°</p>
         </div>
         `;
           forecastContainer.appendChild(card);

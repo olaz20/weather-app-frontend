@@ -1,4 +1,6 @@
 import { weatherIcons } from "./weather-icon.js";
+import {formatTemp, formatWind, formatPrecip}  from  "./helper_function.js"
+
 
 export function renderCurrentWeather(data, cityLabel){
     document.getElementById("city-name").textContent = cityLabel;
@@ -10,11 +12,11 @@ export function renderCurrentWeather(data, cityLabel){
         year: "numeric"
     });
     document.getElementById("temperature").textContent =
-    `${data.current_weather.temperature}°`;
+    `${formatTemp(data.current_weather.temperature)}`;
 
   document.getElementById("feels-like").textContent =
     data.hourly?.apparent_temperature
-      ? `${Math.round(data.hourly.apparent_temperature[0])}°`
+      ? `${formatTemp(data.hourly.apparent_temperature[0])}`
       : "N/A";
 
   document.getElementById("humidity").textContent =
@@ -23,12 +25,12 @@ export function renderCurrentWeather(data, cityLabel){
       : "N/A";
 
   document.getElementById("wind").textContent =
-    `${data.current_weather.windspeed} km/h`;
+    `${formatWind(data.current_weather.windspeed)} `;
 
   document.getElementById("precipitation").textContent =
     data.hourly?.precipitation
-      ? `${data.hourly.precipitation[0]}mm`
-      : "0 mm";
+      ? `${ formatPrecip(data.hourly.precipitation[0])}`
+      : "N/A";
 
     let code = data.current_weather.weathercode;
     let iconPath = weatherIcons[code] || "assets/images/icon-sunny.webp";
@@ -55,7 +57,7 @@ export function renderDailyForecast(data){
         card.innerHTML = `
       <p>${dayLabel}</p>
       <img src="${iconPath}" alt="weather-icon">
-      <p>${Math.round(maxTemps[i])}° ${Math.round(minTemps[i])}°</p>
+      <p>${formatTemp(maxTemps[i])} ${formatTemp(minTemps[i])}</p>
     `;
      container.appendChild(card);
     });
