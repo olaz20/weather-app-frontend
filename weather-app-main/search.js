@@ -31,12 +31,14 @@ data.results.forEach(city =>
 
 }
 
+
+
+
 searchInput.addEventListener("input", (e) => showSuggestions(e.target.value));
 
-async function selectCity(lat, lon, lable){
-    searchInput.value = lable;
+async function selectCity(lat, lon, label){
+    searchInput.value = label;
     suggestionsEl.style.display="none";
-    await fetchWeatherData(lat, lon);
 }
 
 async function fetchWeatherData(lat, lon, label){
@@ -53,6 +55,7 @@ async function fetchWeatherData(lat, lon, label){
     renderCurrentWeather(data, label);
     renderDailyForecast(data);
     const today = new Date().toLocaleDateString("en-US", { weekday: "long" });
+    document.querySelector(".day-label").textContent = today;
     renderHourlyForecast(today, data);
      suggestionsEl.style.display = "none";
     } catch (error) {
