@@ -42,8 +42,13 @@ async function selectCity(lat, lon, label){
 }
 
 export async function fetchWeatherData(lat, lon, label){
-    suggestionsEl.innerHTML = `<li><span>🔄 Search in progress...</span></li>`;
+    suggestionsEl.innerHTML = `<li><div class="loading-wrapper">
+    <img src="assets/images/icon-loading.svg" alt="loading-logo" class="loading-icon">
+    <span>Search in progress...</span>
+    </div>
+    </li>`;
     suggestionsEl.style.display="block";
+
     try {
         const res = await fetch(`https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&current_weather=true&hourly=temperature_2m,apparent_temperature,relative_humidity_2m,precipitation,weathercode,windspeed_10m&daily=weathercode,temperature_2m_max,temperature_2m_min,precipitation_sum,sunrise,sunset,windspeed_10m_max&timezone=auto`);
        

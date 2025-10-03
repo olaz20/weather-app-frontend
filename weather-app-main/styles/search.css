@@ -6,15 +6,11 @@
     position: relative;
 }
 
-
-
 .search-container .search-wrapper{
     position: relative;
      
   
 }
-
-
 
 .search-container .search-bar{
     width: clamp(150px, 30vw, 300px);
@@ -72,6 +68,31 @@
 .suggestions-list li:hover {
   background: #333;
 }
+
+
+
+@keyframes spin {
+    from {transform: rotate(0deg);}
+    to {transform: rotate(360deg);}
+}
+
+.loading-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 6px 0;
+}
+
+.loading-icon {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    animation: spin 1s linear infinite;
+    vertical-align: middle;
+    margin-right: 8px;
+}
+
 
 @media (max-width: 600px){
      
