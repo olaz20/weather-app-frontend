@@ -41,7 +41,7 @@ async function selectCity(lat, lon, label){
     suggestionsEl.style.display="none";
 }
 
-async function fetchWeatherData(lat, lon, label){
+export async function fetchWeatherData(lat, lon, label){
     suggestionsEl.innerHTML = `<li><span>🔄 Search in progress...</span></li>`;
     suggestionsEl.style.display="block";
     try {
