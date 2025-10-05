@@ -1,0 +1,107 @@
+.skeleton-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 15px 20px;
+  border-radius: 15px;
+  height: 100px;
+}
+
+
+.skeleton-info {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+
+.skeleton-temp {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+
+@keyframes shimmer {
+  0% { background-position: -200px 0; }
+  100% { background-position: 200px 0; }
+}
+
+.skeleton {
+  background: linear-gradient(90deg, #2b2b2b 25%, #3a3a3a 37%, #2b2b2b 63%); 
+  background-size: 400% 100%;
+  animation: shimmer 1.3s infinite;
+  border-radius: 6px;
+}
+
+
+
+
+.params-card {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+   margin-top: 10px;
+}
+
+.weater-params {
+  display: flex;
+  flex-direction: column;
+  border-radius: 12px;
+  padding: 12px;
+  z-index: 100;
+  box-shadow: 0px 6px 15px rgba(0,0,0,0.5);
+  gap: 10px;
+  background: rgba(255, 255, 255, 0.05); 
+  flex:1;
+   align-items: center;
+}
+
+.weater-params p {
+  margin: 4px 0;
+  font-size: 0.9rem;
+  color: #ccc;
+  text-align: center;
+}
+
+.skeleton-text{
+    font-weight: bold;
+    font-size: 1.5rem;
+    margin-top: 10px;
+}
+
+.daily-forecast-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding: 10px;
+}
+
+.forecast-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background:  rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+  padding: 12px;
+  flex: 1;
+}
+
+
+
+
+@media (max-width: 800px){
+  .params-card {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }}
+
+@media(min-width: 801px) and (max-width: 1000px){
+.params-card {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+}

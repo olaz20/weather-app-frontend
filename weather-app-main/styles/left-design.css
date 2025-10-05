@@ -1,0 +1,21 @@
+.left-design{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+@media(min-width: 601px) and (max-width: 1000px){
+.left-design{
+    width: 50% !important;
+    box-sizing: border-box;
+}
+
+}
+
+
+@media(min-width: 1001px) {
+   .left-design{
+    width: 65% !important;
+    box-sizing: border-box;
+}
+}

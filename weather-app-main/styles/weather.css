@@ -1,6 +1,3 @@
-/**.left-design{
-    flex: 1;
-} **/
 
 
 
@@ -83,10 +80,7 @@
 
 
 @media(min-width: 601px) and (max-width: 1000px){
-.left-design{
-    width: 50% !important;
-    box-sizing: border-box;
-}
+
 .weather-card{
     width: 100% !important;
     box-sizing: border-box;
@@ -100,9 +94,5 @@
     }
 }
 
-@media(min-width: 1001px) {
-   .left-design{
-    width: 65% !important;
-    box-sizing: border-box;
-}
-}
+
+
