@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="styles/header.css">
     <link rel="stylesheet" href="styles/search.css">
     <link rel="stylesheet" href="styles/left-design.css">
+    <link rel="stylesheet" href="styles/right-design.css">
     <link rel="stylesheet" href="styles/loading.css">
 </head>
 
@@ -103,6 +104,28 @@
                     
                     </div>
                 </div>
+                <div class="right-design">
+  <div class="card-sub-title">
+    <h3>Hourly Forecast</h3>
+    <div class="day-dropdow">
+      <button id="dayButton">
+        <p class="day-label">Select Day</p>
+        <img src="assets/images/icon-dropdown.svg">
+        <ul id="dayMenu" class="dropdown-menu">
+          <li data-day="Monday">Monday</li>
+          <li data-day="Tuesday">Tuesday</li>
+          <li data-day="Wednesday">Wednesday</li>
+          <li data-day="Thursday">Thursday</li>
+          <li data-day="Friday">Friday</li>
+          <li data-day="Saturday">Saturday</li>
+          <li data-day="Sunday">Sunday</li>
+        </ul>
+      </button>
+    </div>
+  </div>
+  <div class="forecast-container" id="hourly-forecast"></div>
+</div>
+
             </div>
         </div>
 
