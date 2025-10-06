@@ -1,5 +1,8 @@
 import { renderCurrentWeather , renderDailyForecast} from './left-design.js'
 import {renderHourlyForecast} from './right-design.js'
+import {WeatherSkeleton } from './loading.js';
+
+
 const suggestionsEl = document.getElementById("suggestions");
 const searchButton = document.querySelector(".submit-bar");
 const searchInput = document.getElementById("searchInput");
@@ -42,6 +45,11 @@ async function selectCity(lat, lon, label){
 }
 
 export async function fetchWeatherData(lat, lon, label){
+    
+
+    const skeleton = new WeatherSkeleton();
+    skeleton.show()
+
     suggestionsEl.innerHTML = `<li><div class="loading-wrapper">
     <img src="assets/images/icon-loading.svg" alt="loading-logo" class="loading-icon">
     <span>Search in progress...</span>
@@ -57,6 +65,7 @@ export async function fetchWeatherData(lat, lon, label){
     }
     const data = await res.json();
     window.weatherData = data;
+    skeleton.hide();
     renderCurrentWeather(data, label);
     renderDailyForecast(data);
     const today = new Date().toLocaleDateString("en-US", { weekday: "long" });

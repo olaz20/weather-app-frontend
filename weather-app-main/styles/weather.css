@@ -1,27 +1,22 @@
 
 
 
-.weather-card {       
-  height: auto;  
-  display: flex;    
+.weather-card {          
   position: relative;
-  background: url("/weather-app-main/assets/images/bg-today-large.svg") no-repeat center/cover;
-  border-radius: 12px;
-  padding: 20px;
-  justify-content: space-between;
-  color: white;
-  align-items: center;
-
 }
 
 
 .weather-content {
+  height: auto;  
   display: flex;
+  background: url("/weather-app-main/assets/images/bg-today-large.svg") no-repeat center/cover;
   justify-content: space-between;
   align-items: center;
-  height: 100%;
-   width: 100%;
-   flex: 1;
+  border-radius: 12px;
+  padding: 20px;
+  width: 100%;
+  flex: 1;
+  color: white;
 }
 
 .weather-info h2 {
@@ -62,18 +57,19 @@
 }
 
 .weather-card{
-    background: url("/weather-app-main/assets/images/bg-today-small.svg") no-repeat center/cover;
+   
     width: 100% !important;
-    padding: 20px 0px;
-    
     
 }
 
 
 .weather-content{
+    background: url("/weather-app-main/assets/images/bg-today-small.svg") no-repeat center/cover;
     flex-direction: column;
     box-sizing: border-box;
     gap: 20px;
+    padding: 20px 0px;
+    width: 100% !important;
 }
 
 }
@@ -81,7 +77,7 @@
 
 @media(min-width: 601px) and (max-width: 1000px){
 
-.weather-card{
+.weather-content{
     width: 100% !important;
     box-sizing: border-box;
     flex: 1;

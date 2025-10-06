@@ -1,5 +1,8 @@
 import { fetchWeatherData } from "./search.js";
+import { WeatherSkeleton } from "./loading.js";
 window.addEventListener("load", () => {
+    const skeleton = new WeatherSkeleton();
+    skeleton.show();
     if (navigator.geolocation){
         navigator.geolocation.getCurrentPosition(
             async(pos) => {
@@ -9,10 +12,10 @@ window.addEventListener("load", () => {
                 
             },
             (err) => {
-                fetchWeatherData(40.7128, -74.0060, "New York, USA");
+                skeleton.show();
             }
         ); } else {
-            fetchWeatherData(40.7128, -74.0060, "New York, USA")
+            skeleton.show();
         }
             
         

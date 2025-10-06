@@ -6,6 +6,7 @@
    <title>Weather APP </title>
    <link rel="stylesheet" href="main.css">
    <link rel="stylesheet" href="styles/header.css">
+   <link rel="stylesheet" href="styles/loading.css">
    <link rel="stylesheet" href="styles/search.css">
     <link rel="stylesheet" href="styles/left-design.css">
    <link rel="stylesheet" href="styles/weather.css">
@@ -67,11 +68,10 @@
             <button class="submit-bar" type="submit">Search</button>
             
         </div>
-
          <div class="design-container">
             <div class="left-design">
-                 <div class="weather-card">
-                <div class="weather-content">
+                <div class="weather-card" id="ld-weather-content">
+                <div class="weather-content" >
                     <div class="weather-info">
                         <h2 id="city-name"></h2>
                         <p id="current-date"></p>
@@ -82,7 +82,7 @@
                     </div>
                 </div>
                  </div>
-            <div class="weater-params-container">
+            <div class="weater-params-container" id="weather-params">
                     <div class="weater-params">
                         <p>feels like</p>
                         <p class="value" id="feels-like"></p>
@@ -139,6 +139,7 @@
     </div>
      
      <script src="unit.js" type="module"></script>
+     <script src="loading.js" type="module"></script>
       <script src="helper_function.js" type="module"></script>
     <script src="search.js" type="module"></script>
     <script src="left-design.js" type="module"></script>
