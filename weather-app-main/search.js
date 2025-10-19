@@ -1,4 +1,4 @@
-import { renderCurrentWeather , renderDailyForecast} from './left-design.js'
+import { renderCurrentWeather , renderDailyForecast, weatherCard} from './left-design.js'
 import {renderHourlyForecast} from './right-design.js'
 import {WeatherSkeleton } from './loading.js';
 
@@ -66,6 +66,7 @@ export async function fetchWeatherData(lat, lon, label){
     const data = await res.json();
     window.weatherData = data;
     skeleton.hide();
+    weatherCard();
     renderCurrentWeather(data, label);
     renderDailyForecast(data);
     const today = new Date().toLocaleDateString("en-US", { weekday: "long" });
@@ -73,7 +74,6 @@ export async function fetchWeatherData(lat, lon, label){
     renderHourlyForecast(today, data);
      suggestionsEl.style.display = "none";
     } catch (error) {
-        console.error("Error fetching weather data:", error);
         suggestionsEl.innerHTML = `<li><span> Could not fetch weather</span></li>`;
     }
 

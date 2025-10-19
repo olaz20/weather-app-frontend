@@ -17,7 +17,6 @@ export class WeatherSkeleton {
 
   hide() {
     document.body.classList.remove("loading");
-    this.clear();
   }
 
   clear() {
