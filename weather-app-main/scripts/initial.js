@@ -1,4 +1,4 @@
-import { fetchWeatherData } from "../search.js";
+import { fetchWeatherData } from "./search.js";
 
 
 
