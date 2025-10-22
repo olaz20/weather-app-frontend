@@ -77,6 +77,7 @@ export class WeatherSkeleton {
       this.hourlyContainer.appendChild(card);
     }
   }
+   
 }
 
 document.addEventListener("DOMContentLoaded", () => {

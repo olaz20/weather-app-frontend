@@ -44,6 +44,32 @@ async function selectCity(lat, lon, label){
     suggestionsEl.style.display="none";
 }
 
+
+
+function renderNotFoundUI() {
+const designContainer = document.getElementById("design-container"); 
+  if (!designContainer) {
+    return;
+  }
+  
+  const left = designContainer.querySelector(".left-design");
+  const right = designContainer.querySelector(".right-design");
+
+  if (left) left.style.display = "none";
+  if (right) right.style.display = "none";
+
+ 
+  const oldNotFound = designContainer.querySelector(".not-found");
+  if (oldNotFound) oldNotFound.remove();
+  const notFoundDiv = document.createElement("div");
+  notFoundDiv.classList.add("not-found");
+  notFoundDiv.innerHTML = `
+      <h2>No search result found!</h2>
+  `;
+  designContainer.appendChild(notFoundDiv);
+}
+
+
 export async function fetchWeatherData(lat, lon, label){
     
 
@@ -56,6 +82,7 @@ export async function fetchWeatherData(lat, lon, label){
     </div>
     </li>`;
     suggestionsEl.style.display="block";
+  
 
     try {
         const res = await fetch(`https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&current_weather=true&hourly=temperature_2m,apparent_temperature,relative_humidity_2m,precipitation,weathercode,windspeed_10m&daily=weathercode,temperature_2m_max,temperature_2m_min,precipitation_sum,sunrise,sunset,windspeed_10m_max&timezone=auto`);
@@ -66,6 +93,9 @@ export async function fetchWeatherData(lat, lon, label){
     const data = await res.json();
     window.weatherData = data;
     skeleton.hide();
+    document.querySelector(".not-found")?.remove();
+    document.querySelector(".left-design").style.display = "block";
+    document.querySelector(".right-design").style.display = "block";
     weatherCard();
     renderCurrentWeather(data, label);
     renderDailyForecast(data);
@@ -74,7 +104,11 @@ export async function fetchWeatherData(lat, lon, label){
     renderHourlyForecast(today, data);
      suggestionsEl.style.display = "none";
     } catch (error) {
+        skeleton.hide();
+        console.error("Fetch or render error:", error.message);
         suggestionsEl.innerHTML = `<li><span> Could not fetch weather</span></li>`;
+        renderNotFoundUI();
+        
     }
 
 }
@@ -84,14 +118,23 @@ export async function fetchWeatherData(lat, lon, label){
 searchButton.addEventListener("click", async (e) => {
     e.preventDefault();
     const query = searchInput.value.trim();
-    if (!query) return;
+    if (!query) return ;
+    try {
     const res = await fetch(`https://geocoding-api.open-meteo.com/v1/search?name=${query}`);
     const data = await res.json();
     if (data.results && data.results.length > 0) {
         const city = data.results[0];
         const label = `${city.name}, ${city.country}`
         await fetchWeatherData(city.latitude, city.longitude, label);
-    } 
+    } else {
+        renderNotFoundUI();
+        suggestionsEl.style.display = "none";
+    }  }
+    catch (error) {
+    renderNotFoundUI();
+    suggestionsEl.style.display = "none";
+  }
+
 });
 
 
