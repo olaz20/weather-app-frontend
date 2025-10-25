@@ -5,11 +5,54 @@ import {
 } from "./left-design.js";
 import { renderHourlyForecast } from "./right-design.js";
 import { WeatherSkeleton } from "./loading.js";
-import {renderNotFoundUI} from "./not-found.js"
+import { renderNotFoundUI } from "./not-found.js";
 
-const suggestionsEl = document.getElementById("suggestions");
-const searchButton = document.querySelector(".submit-bar");
-const searchInput = document.getElementById("searchInput");
+let suggestionsEl, searchButton, searchInput;
+
+function initSearch() {
+  suggestionsEl = document.getElementById("suggestions");
+  searchButton = document.querySelector(".submit-bar");
+  searchInput = document.getElementById("searchInput");
+
+  if (!searchInput || !searchButton || !suggestionsEl) return false; 
+
+
+  searchInput.addEventListener("input", (e) => showSuggestions(e.target.value));
+
+  searchButton.addEventListener("click", async (e) => {
+    e.preventDefault();
+    const query = searchInput.value.trim();
+    if (!query) return;
+    try {
+      const res = await fetch(
+        `https://geocoding-api.open-meteo.com/v1/search?name=${query}`
+      );
+      const data = await res.json();
+      if (data.results && data.results.length > 0) {
+        const city = data.results[0];
+        const label = `${city.name}, ${city.country}`;
+        await fetchWeatherData(city.latitude, city.longitude, label);
+      } else {
+        renderNotFoundUI();
+        suggestionsEl.style.display = "none";
+      }
+    } catch (error) {
+      renderNotFoundUI();
+      suggestionsEl.style.display = "none";
+    }
+  });
+
+  return true;
+}
+
+// keep checking until the search container exists
+document.addEventListener("DOMContentLoaded", () => {
+  const checkInterval = setInterval(() => {
+    if (initSearch()) clearInterval(checkInterval);
+  }, 100);
+});
+
+
 
 async function showSuggestions(query) {
   if (query.length === 0) {
@@ -41,13 +84,10 @@ async function showSuggestions(query) {
   });
 }
 
-searchInput.addEventListener("input", (e) => showSuggestions(e.target.value));
-
 async function selectCity(lat, lon, label) {
   searchInput.value = label;
   suggestionsEl.style.display = "none";
 }
-
 
 export async function fetchWeatherData(lat, lon, label) {
   const skeleton = new WeatherSkeleton();
@@ -56,8 +96,7 @@ export async function fetchWeatherData(lat, lon, label) {
   suggestionsEl.innerHTML = `<li><div class="loading-wrapper">
     <img src="assets/images/icon-loading.svg" alt="loading-logo" class="loading-icon">
     <span>Search in progress...</span>
-    </div>
-    </li>`;
+  </div></li>`;
   suggestionsEl.style.display = "block";
 
   try {
@@ -65,9 +104,8 @@ export async function fetchWeatherData(lat, lon, label) {
       `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&current_weather=true&hourly=temperature_2m,apparent_temperature,relative_humidity_2m,precipitation,weathercode,windspeed_10m&daily=weathercode,temperature_2m_max,temperature_2m_min,precipitation_sum,sunrise,sunset,windspeed_10m_max&timezone=auto`
     );
 
-    if (!res.ok) {
-      throw new Error("Weather API request failed");
-    }
+    if (!res.ok) throw new Error("Weather API request failed");
+
     const data = await res.json();
     window.weatherData = data;
     skeleton.hide();
@@ -77,37 +115,16 @@ export async function fetchWeatherData(lat, lon, label) {
     weatherCard();
     renderCurrentWeather(data, label);
     renderDailyForecast(data);
+
     const today = new Date().toLocaleDateString("en-US", { weekday: "long" });
     document.querySelector(".day-label").textContent = today;
     renderHourlyForecast(today, data);
+
     suggestionsEl.style.display = "none";
   } catch (error) {
     skeleton.hide();
     console.error("Fetch or render error:", error.message);
-    suggestionsEl.innerHTML = `<li><span> Could not fetch weather</span></li>`;
+    suggestionsEl.innerHTML = `<li><span>Could not fetch weather</span></li>`;
     renderNotFoundUI();
   }
 }
-
-searchButton.addEventListener("click", async (e) => {
-  e.preventDefault();
-  const query = searchInput.value.trim();
-  if (!query) return;
-  try {
-    const res = await fetch(
-      `https://geocoding-api.open-meteo.com/v1/search?name=${query}`
-    );
-    const data = await res.json();
-    if (data.results && data.results.length > 0) {
-      const city = data.results[0];
-      const label = `${city.name}, ${city.country}`;
-      await fetchWeatherData(city.latitude, city.longitude, label);
-    } else {
-      renderNotFoundUI();
-      suggestionsEl.style.display = "none";
-    }
-  } catch (error) {
-    renderNotFoundUI();
-    suggestionsEl.style.display = "none";
-  }
-});
