@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather APP</title>
+    <link rel="stylesheet" href="styles/main.css" />
+    <link rel="stylesheet" href="styles/header.css" />
+    <link rel="stylesheet" href="styles/loading.css" />
+    <link rel="stylesheet" href="styles/not-found.css" />
+    <link rel="stylesheet" href="styles/search.css" />
+    <link rel="stylesheet" href="styles/left-design.css" />
+    <link rel="stylesheet" href="styles/weather.css" />
+    <link rel="stylesheet" href="styles/weather-para.css" />
+    <link rel="stylesheet" href="styles/daily-forecast.css" />
+    <link rel="stylesheet" href="styles/right-design.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <div class="header" id="header"></div>
+      </header>
+
+      <div class="title">
+        <h1>How's the sky looking today?</h1>
+      </div>
+      <div class="search-container" id="search-container"></div>
+      <div class="design-container" id="design-container">
+        <div class="left-design">
+          <div class="weather-card" id="ld-weather-content">
+            <div class="weather-content"></div>
+          </div>
+          <div class="weater-params-container" id="weather-params"></div>
+          <h3 class="subtitle">Daily Forecast</h3>
+          <div id="daily-forecast" class="daily-forecast-container"></div>
+        </div>
+
+        <div class="right-design" id="right-design">
+        <div class="card-sub-title">
+            <h3>Hourly Forecast</h3>
+            <div class="day-dropdow">
+            <button id="dayButton">
+                <p class="day-label">Select Day</p>
+                <img src="assets/images/icon-dropdown.svg" alt="dropdown icon">
+                <ul id="dayMenu" class="dropdown-menu">
+                <li data-day="Monday">Monday</li>
+                <li data-day="Tuesday">Tuesday</li>
+                <li data-day="Wednesday">Wednesday</li>
+                <li data-day="Thursday">Thursday</li>
+                <li data-day="Friday">Friday</li>
+                <li data-day="Saturday">Saturday</li>
+                <li data-day="Sunday">Sunday</li>
+                </ul>
+            </button>
+            </div>
+      </div>
+
+      <div class="forecast-container" id="hourly-forecast"></div>
+    </div>
+        </div>
+      </div>
+    </div>
+    <div></div>
+
+    <script src="scripts/helper_function.js" type="module"></script>
+    <script src="scripts/loading.js" type="module"></script>
+    <script src="scripts/header.js" type="module"></script>
+    <script src="scripts/searchbar.js" type="module"></script>
+    <script src="scripts/left-design.js" type="module"></script>
+    <script src="scripts/right-design.js" type="module"></script>
+    <script src="scripts/search.js" type="module"></script>
+    <script src="scripts/initial.js" type="module"></script>
+    <script src="scripts/unit.js" type="module"></script>
+  </body>
+</html>
